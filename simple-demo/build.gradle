@@ -7,6 +7,7 @@ repositories {
     mavenCentral()
     maven {
         url "http://maven.bookmap.com/maven2/releases/"
+        allowInsecureProtocol = true
     }
 }
 
@@ -18,7 +19,10 @@ dependencies {
 }
 
 jar {
-    archiveName 'com-bookmap-api-simple-demo-' + project.version + '.jar'
+    //archiveName='com-bookmap-api-simple-demo-' + project.version + '.jar'
+    archiveBaseName = 'com-bookmap-api-simple-demo-'
+    archiveVersion = project.version
+    archiveFileName = 'com-bookmap-api-simple-demo-' + project.version + '.jar'
 }
 
 eclipse.classpath.downloadJavadoc = true
